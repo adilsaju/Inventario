@@ -1,0 +1,137 @@
+﻿@model IEnumerable<Inventario.ServiceContracts.HistoryViewModel>
+
+@{
+    ViewBag.Title = "History";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+@{
+    var ware = Model.FirstOrDefault().EmployeeViewModel;
+}
+<div class="container">
+   
+      
+      
+
+   
+    <h3>Employee Details</h3>
+    <table class="table well">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeViewModel.S_No)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeViewModel.Employee_ID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeViewModel.Emp_Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeViewModel.Designation)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeViewModel.Email_Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeViewModel.Date_of_joining)
+            </th>
+
+
+
+        </tr>
+
+        <tr>
+
+
+            <td>
+                @ware.S_No
+            </td>
+            <td>
+                @ware.Employee_ID
+            </td>
+
+            <td>
+                @ware.Emp_Name
+            </td>
+
+            <td>
+                @ware.Designation
+            </td>
+            <td>
+                @ware.Email_Id
+            </td>
+
+            <td>
+                @ware.date
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <h3>Device History</h3>
+
+
+    <table class="well table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Device_Id)
+            </th>
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.assign)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.unassign)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Device_Id)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.assign)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.unassign)
+                </td>
+
+            </tr>
+        }
+
+
+    </table>
+    <div style="float:right">
+
+        @Html.ActionLink("Back to List", "Index", "Employee")
+
+    </div></div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/npm.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/table.js"></script>

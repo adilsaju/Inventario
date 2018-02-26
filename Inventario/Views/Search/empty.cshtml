@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "empty";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<h3>No match found</h3>
+<div style="float:right">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+@{
+    if (@ViewBag.value == 1)
+    {
+        @Html.ActionLink("Back to List", "Index1", "warehouse")
+    }
+    if (@ViewBag.value == 2)
+    {
+        @Html.ActionLink("Back to List", "Index2", "warehouse")
+    }
+    if (ViewBag.value == 3)
+    {
+        @Html.ActionLink("Back to List", "Index", "Employee")
+    }
+    if (@ViewBag.value == 4)
+    {
+        @Html.ActionLink("Back to List", "Index", "Assignment")
+    }
+}</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/npm.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/table.js"></script>

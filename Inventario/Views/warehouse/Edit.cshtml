@@ -1,0 +1,115 @@
+﻿@model Inventario.ServiceContracts.warehouseViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+<div class="container" style="max-width:500px">
+
+   
+    <h2 class="text-center">Edit</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Device_ID, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Device_ID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Device_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Serial_No, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Serial_No, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Serial_No, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Device_Name, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Device_Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Device_Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Device_Type, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Device_Type, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Device_Type, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Processor, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Processor, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Processor, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Purchase_Date, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Purchase_Date, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Purchase_Date, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label  pmtallocated pull-left" })
+                <div class="col-md-8 pull-right">
+                    @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = Model.Status } })
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group" style="padding-right:16px">
+               
+                <div class="pull-right">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+       
+        <div class="pull-right">
+            @Html.ActionLink("Back to List", "Index1")
+        </div>
+    </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/npm.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/table.js"></script>

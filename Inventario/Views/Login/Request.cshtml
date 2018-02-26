@@ -1,0 +1,191 @@
+﻿
+@{
+
+    ViewBag.Title = "Request";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+<head>
+
+    <style>
+  
+textarea {
+   max-width: 100%;
+    width: 100%;
+    height:150px;
+}
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="rows">
+
+
+            <div class="col-md-5 well">
+
+                <h2>Request Device</h2>
+                <div class="row"></div>
+
+                @using (Html.BeginForm(new { htmlAttributes = new { @class = "form-horizontal" } }))
+                {
+                                @Html.AntiForgeryToken()
+                             
+
+                        <div class="form-group">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <label class="control-label pull-left"><h4>Device Id</h4></label>
+                            <div class="col-md-9">
+
+                                @Html.Editor("device_id", new { htmlAttributes = new { @type = "text", @class = "form-control" } })
+
+
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        @Html.Editor("Emp_Id", new { htmlAttributes = new { @hidden = "hidden", @Value = HttpContext.Current.User.Identity.Name } })
+                        <div class="form-group">
+                            <div class="col-sm-offset-9">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    
+
+                }
+
+                <div class="row" style="padding-bottom:180px"></div>
+                
+            </div>
+            <div class="col-md-1"></div>
+
+            <div class="col-md-5 well">
+                <h2>Feedback</h2>
+                <div class="row"></div>
+                @using (Html.BeginForm("Feedback", "Login", FormMethod.Post, new { htmlAttributes = new { @class = "form-horizontal" } }))
+                {
+                    @Html.AntiForgeryToken()
+                 
+
+                        <div class="form-group">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <label class="control-label pull-left"><h4>Device Id</h4></label>
+                            <div class="col-md-9">
+
+                                @Html.Editor("Device_Id", new { htmlAttributes = new { @type = "text", @class = "form-control" } })
+
+
+                              
+                            </div>
+                        </div>
+
+
+                        <div class="row"></div>
+
+                        <div class="form-group">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                            <label class="control-label pull-left"><h4>Feedback</h4></label>
+                          
+
+                            <div class="col-md-9">
+                                @Html.TextArea("Feedback", new { htmlAttributes = new { @class = "form-control",rows="6" ,cols="6"} })
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+                        @Html.Editor("Emp_Id", new { htmlAttributes = new { @hidden = "hidden", @Value = HttpContext.Current.User.Identity.Name } })
+                        <div class="form-group">
+                            <div class="col-sm-offset-9" >
+                                <button type="submit" class="btn btn-primary" >Send</button>
+                            </div>
+                        </div>
+
+
+                  
+                }
+                <div class="row" style="padding-bottom:25px"></div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/npm.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/table.js"></script>

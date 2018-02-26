@@ -1,0 +1,140 @@
+﻿@model Inventario.ServiceContracts.UserViewModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Profile</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal well">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeViewModel.Employee_ID)
+            &nbsp;&nbsp; &nbsp;&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeViewModel.Employee_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeViewModel.Emp_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeViewModel.Emp_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeViewModel.Designation)
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeViewModel.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeViewModel.Email_Id)
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeViewModel.Email_Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeViewModel.Date_of_joining)
+            &nbsp;&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeViewModel.date)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    <h2>Current Devices</h2>
+</p>
+<p>
+
+</p>
+<table class="table well">
+    <tr>
+
+        <th>
+           Device Id
+        </th>
+        <th>
+            Serial No
+        </th>
+        <th>
+            Device Name
+        </th>
+        <th>
+            Device Type
+        </th>
+        <th>
+            Processor
+        </th>
+        <th>
+            Remarks
+        </th>
+       
+       
+        <th>
+           Purchase Date
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model.warehouseViewModel)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Device_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serial_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Device_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Device_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Processor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/npm.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/table.js"></script>

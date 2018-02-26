@@ -1,0 +1,100 @@
+﻿@model Inventario.ServiceContracts.EmployeeViewModel
+
+<head>
+    <style>
+        .modal-content {
+            background-color: #FFF;
+            opacity: .9;
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<div id="myModal4" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Edit</h3>
+            </div>
+            <div class="modal-body">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.S_No, htmlAttributes: new { @class = "control-label  pmtallocated pull-left", @style = "padding-left:50px" })
+                            <div class="col-sm-8 pull-right" style="padding-right:50px">
+                                @Html.EditorFor(model => model.S_No, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                @Html.ValidationMessageFor(model => model.S_No, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employee_ID, htmlAttributes: new { @class = "control-label  pmtallocated pull-left", @style = "padding-left:50px" })
+                            <div class="col-sm-8 pull-right" style="padding-right:50px">
+                                @Html.EditorFor(model => model.Employee_ID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                @Html.ValidationMessageFor(model => model.Employee_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Emp_Name, htmlAttributes: new { @class = "control-label  pmtallocated pull-left", @style = "padding-left:50px" })
+                            <div class="col-sm-8 pull-right" style="padding-right:50px">
+                                @Html.EditorFor(model => model.Emp_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Emp_Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label  pmtallocated pull-left", @style = "padding-left:50px" })
+                            <div class="col-sm-8 pull-right" style="padding-right:50px">
+                                @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email_Id, htmlAttributes: new { @class = "control-label  pmtallocated pull-left", @style = "padding-left:50px" })
+                            <div class="col-sm-8 pull-right" style="padding-right:50px">
+                                @Html.EditorFor(model => model.Email_Id, new { htmlAttributes = new { @type = "email", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label  pmtallocated pull-left", @style = "padding-left:50px" })
+                            <div class="col-sm-8 pull-right" style="padding-right:50px">
+                                @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="padding-right:16px">
+
+                            <div class="pull-right" style="padding-right:32px">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,139 @@
+﻿@model IEnumerable<Inventario.ServiceContracts.HistoryViewModel>
+
+@{
+    ViewBag.Title = "History";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+@{
+    var ware = Model.FirstOrDefault().warehouseViewModel;
+
+}
+
+<h3>Details</h3>
+<table class="table well">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.warehouseViewModel.Device_ID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.warehouseViewModel.Serial_No)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.warehouseViewModel.Device_Name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.warehouseViewModel.Processor)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.warehouseViewModel.Remarks)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.warehouseViewModel.Status)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.warehouseViewModel.Purchase_Date)
+        </th>
+
+
+    </tr>
+    <tr>
+        <td>
+            @ware.Device_ID
+        </td>
+
+        <td>
+            @ware.Serial_No
+        </td>
+
+
+        <td>
+            @ware.Device_Name
+        </td>
+
+        <td>
+            @ware.Processor
+        </td>
+
+        <td>
+            @ware.Remarks
+        </td>
+
+        <td>
+            @ware.Status
+        </td>
+        <td>
+            @ware.date.ToString()
+        </td>
+
+    </tr>
+
+
+
+
+</table>
+
+<h3>History</h3>
+<table class="table well">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Emp_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Emp_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assign)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unassign)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assign)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.unassign)
+            </td>
+
+        </tr>
+    }
+
+</table>
+<div style="float:right">
+ 
+        @Html.ActionLink("Back to List", "Index1", "warehouse")
+
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/npm.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/table.js"></script>

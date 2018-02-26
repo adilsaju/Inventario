@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+
+
+
+<head>
+
+    <title>Registration Inventario</title>
+
+    <link href="~/Content/reg.css" rel="stylesheet" />
+
+
+</head>
+
+
+
+<body>
+
+    <img src="~/fonts/gmg2.jpg" style="max-height:34px;margin-top:11px;margin-left:11px;" />
+    <div class="wrapper">
+        <!-- multistep form -->
+        @using (Html.BeginForm("registration", "Login", FormMethod.Post, new { @id = "msform" }))
+        {
+        <!-- progressbar -->
+
+
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <ul id="progressbar">
+                <li class="active" style="color: white"><h2>Registration</h2></li>
+                <p>&nbsp;</p>
+            </ul>
+
+
+        <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">Create your account</h2>
+                <p>&nbsp;</p>
+                <input type="text" name="userid" placeholder="Employee id" />
+                <input data-toggle="tooltip" title="Special characters not allowed" type="name" name="username" placeholder="Employee Name" />
+                <input type="password" name="pass" placeholder="Password" />
+                <input type="password" name="cpass" placeholder="Confirm Password" />
+                @Html.ValidationMessage("error", new { @class = "text-danger" })
+                <input type="submit" name="submit" class="submit action-button" value="submit" />
+            </fieldset>
+        }
+    </div>
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+</body>
+</html>
+

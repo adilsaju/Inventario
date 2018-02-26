@@ -1,0 +1,87 @@
+﻿@model Inventario.ServiceContracts.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>login</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <style>
+    
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <img src="~/fonts/gmg2.jpg" style="max-height:34px;margin-top:3px;margin-left:3px;"/>
+    <div class="wrapper">
+        <div class="login">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+          
+
+            <div class="login-screen">
+
+
+                <div class="app-title">
+
+
+
+
+                    <h1 style="font-family:Helvetica">inventario</h1>
+
+                </div>
+
+
+                <div class="login-form">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="control-group">
+
+
+                            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", @placeholder = "username", @autocomplete = "off" } })
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="control-group">
+
+
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @type = "password", @placeholder = "password" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <button type="submit" id="login-button" class="btn btn-primary btn-large btn-block" href="#">Login</button>
+
+                        <div class="control-group">
+                            @Html.ActionLink("Not registered?", "registration", "Login", new { style = "color:#2980B9", @class = "login-link" })
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+ </body>
+
+
+
+</html>
+

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario", "Inventario\Inventario.csproj", "{CE5B1238-DC42-4054-A327-652689C3431D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario.Data", "Inventario.Data\Inventario.Data.csproj", "{B7C8C8EA-9453-4076-B0B6-1C1AF36FB67C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario.Services", "Inventario.Services\Inventario.Services.csproj", "{49711A63-78C2-45E7-A878-CA7B94FAC86E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario.ServiceContracts", "Inventario.ServiceContracts\Inventario.ServiceContracts.csproj", "{811CF80F-2792-4527-886C-CF00DC804BB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE5B1238-DC42-4054-A327-652689C3431D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5B1238-DC42-4054-A327-652689C3431D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5B1238-DC42-4054-A327-652689C3431D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5B1238-DC42-4054-A327-652689C3431D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C8C8EA-9453-4076-B0B6-1C1AF36FB67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C8C8EA-9453-4076-B0B6-1C1AF36FB67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C8C8EA-9453-4076-B0B6-1C1AF36FB67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C8C8EA-9453-4076-B0B6-1C1AF36FB67C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49711A63-78C2-45E7-A878-CA7B94FAC86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49711A63-78C2-45E7-A878-CA7B94FAC86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49711A63-78C2-45E7-A878-CA7B94FAC86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49711A63-78C2-45E7-A878-CA7B94FAC86E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811CF80F-2792-4527-886C-CF00DC804BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811CF80F-2792-4527-886C-CF00DC804BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811CF80F-2792-4527-886C-CF00DC804BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811CF80F-2792-4527-886C-CF00DC804BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://asseto.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Inventario\\Inventario.csproj
+		SccProjectName1 = Inventario
+		SccLocalPath1 = Inventario
+		SccProjectUniqueName2 = Inventario.Data\\Inventario.Data.csproj
+		SccProjectName2 = Inventario.Data
+		SccLocalPath2 = Inventario.Data
+		SccProjectUniqueName3 = Inventario.Services\\Inventario.Services.csproj
+		SccProjectName3 = Inventario.Services
+		SccLocalPath3 = Inventario.Services
+		SccProjectUniqueName4 = Inventario.ServiceContracts\\Inventario.ServiceContracts.csproj
+		SccProjectName4 = Inventario.ServiceContracts
+		SccLocalPath4 = Inventario.ServiceContracts
+	EndGlobalSection
+EndGlobal

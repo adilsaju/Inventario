@@ -1,0 +1,188 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Inventario</title>
+
+    <!-- Bootstrap -->
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
+
+
+    <link href="~/Content/sidenav.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+
+    <link href="~/Content/table.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+    <div id="wrapper" class="toggled">
+
+
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Good Methods Global
+                    </a>
+                </li>
+                <li>
+                    <a href="#">@Html.ActionLink("Profile", "Home", "Login")</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" class="collapse" data-target="#demo">Free Assets <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo" class="collapse">
+                        <li>
+                            <a href="#">@Html.ActionLink("Desktops", "index1", "warehouse")</a>
+                        </li>
+                        <li>
+                            <a href="#">@Html.ActionLink("Laptops", "index2", "warehouse")</a>
+                        </li>
+
+                    </ul>
+                <li>
+                    <a href="#">@Html.ActionLink("Message Portal", "request", "Login")</a>
+                </li>
+                
+               
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+
+
+
+
+
+
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a class="navbar-brand glyphicon glyphicon-menu-hamburger" href="menu" id="menu"></a>
+                        <a class="navbar-brand" href="#" style="font-size:xx-large">inventario</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="navbar-form navbar-left">
+                         
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> @ViewBag.name<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+
+                           
+
+
+                                    <li>
+
+                                        <a href="@Url.Action("Home","Login")">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span class="glyphicon glyphicon-check"></span>
+                                            Profile
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li>
+
+                                    <a href="@Url.Action("Logout","Login")">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="glyphicon glyphicon-log-out"></span>
+                                        Logout
+                                    </a></li>
+
+
+
+
+                                    
+                                </ul>
+                                
+                            </li>
+
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script src="~/Scripts/bootstrap-dropdown.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <script type="text/javascript">
+
+function set() {
+
+$(document).ready(function(){
+
+       $(".collapse").collapse('show');
+
+    });
+}
+
+    </script>
+
+
+</body>
+
+</html>

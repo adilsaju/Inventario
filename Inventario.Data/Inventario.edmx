@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="employeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Assign">
+          <Key>
+            <PropertyRef Name="Device_Id" />
+          </Key>
+          <Property Name="S_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Device_Id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Emp_Id" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeDetails">
+          <Key>
+            <PropertyRef Name="Employee_ID" />
+          </Key>
+          <Property Name="S_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee_ID" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="Emp_Name" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Designation" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Email_Id" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Date_of_joining" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="S_No" />
+          </Key>
+          <Property Name="S_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Device_Id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Emp_Id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Emp_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Date_assign" Type="date" Nullable="false" />
+          <Property Name="Date_unassign" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="password" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="role" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="Device_ID" />
+          </Key>
+          <Property Name="S_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Device_ID" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Serial_No" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Device_Name" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Device_Type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Processor" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Remarks" Type="nchar" MaxLength="30" />
+          <Property Name="Purchase_Date" Type="date" Nullable="false" />
+          <Property Name="Status" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="employeeModelStoreContainer">
+          <EntitySet Name="Assign" EntityType="Self.Assign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="employeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EmployeeContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Assigns" EntityType="employeeModel.Assign" />
+          <EntitySet Name="EmployeeDetails" EntityType="employeeModel.EmployeeDetail" />
+          <EntitySet Name="Histories" EntityType="employeeModel.History" />
+          <EntitySet Name="Logins" EntityType="employeeModel.Login" />
+          <EntitySet Name="warehouses" EntityType="employeeModel.warehouse" />
+        </EntityContainer>
+        <EntityType Name="Assign">
+          <Key>
+            <PropertyRef Name="Device_Id" />
+          </Key>
+          <Property Name="S_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Device_Id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Emp_Id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EmployeeDetail">
+          <Key>
+            <PropertyRef Name="Employee_ID" />
+          </Key>
+          <Property Name="S_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee_ID" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Emp_Name" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Email_Id" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Date_of_joining" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="S_No" />
+          </Key>
+          <Property Name="S_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Device_Id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Emp_Id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Emp_name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Date_assign" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date_unassign" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="role" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="Device_ID" />
+          </Key>
+          <Property Name="S_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Device_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Serial_No" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Device_Name" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Device_Type" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Processor" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Purchase_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="employeeModelStoreContainer" CdmEntityContainer="EmployeeContext">
+          <EntitySetMapping Name="Assigns">
+            <EntityTypeMapping TypeName="employeeModel.Assign">
+              <MappingFragment StoreEntitySet="Assign">
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Device_Id" ColumnName="Device_Id" />
+                <ScalarProperty Name="S_No" ColumnName="S_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeDetails">
+            <EntityTypeMapping TypeName="employeeModel.EmployeeDetail">
+              <MappingFragment StoreEntitySet="EmployeeDetails">
+                <ScalarProperty Name="Date_of_joining" ColumnName="Date_of_joining" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+                <ScalarProperty Name="S_No" ColumnName="S_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Histories">
+            <EntityTypeMapping TypeName="employeeModel.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="Date_unassign" ColumnName="Date_unassign" />
+                <ScalarProperty Name="Date_assign" ColumnName="Date_assign" />
+                <ScalarProperty Name="Emp_name" ColumnName="Emp_name" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Device_Id" ColumnName="Device_Id" />
+                <ScalarProperty Name="S_No" ColumnName="S_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="employeeModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehouses">
+            <EntityTypeMapping TypeName="employeeModel.warehouse">
+              <MappingFragment StoreEntitySet="warehouse">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Processor" ColumnName="Processor" />
+                <ScalarProperty Name="Device_Type" ColumnName="Device_Type" />
+                <ScalarProperty Name="Device_Name" ColumnName="Device_Name" />
+                <ScalarProperty Name="Serial_No" ColumnName="Serial_No" />
+                <ScalarProperty Name="Device_ID" ColumnName="Device_ID" />
+                <ScalarProperty Name="S_No" ColumnName="S_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

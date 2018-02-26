@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "laptop";
+    if (ViewBag.user)
+    {
+        Layout = "~/Views/Shared/_layout.cshtml";
+    }
+    else
+    {
+        Layout= "~/Views/Shared/_layoutUser.cshtml";
+    }
+}
+@model IEnumerable<Inventario.ServiceContracts.warehouseViewModel>
+<body>
+    <div class="sample" id="editdiv">
+
+    </div>
+
+    <div class="container ">
+
+        <div class="container" id="addcontainer">
+
+            @{Html.RenderAction("DisplayModal",new { id = 2 }); }
+
+        </div>
+        <!---  buttons      -->
+        <div>
+            @if (ViewBag.user)
+            {
+                <button type="button" style="float:right" class="btn btn-primary" data-toggle="modal" data-target="#myModal1"><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add Device&nbsp;&nbsp;&nbsp;</button>
+            }
+            <h3>Laptops</h3>
+            <p>&nbsp;</p>
+        </div>
+
+        <table id="example" class="table table-striped table-bordered table-responsive" cellspacing="0">
+            <thead>
+
+                <tr>
+                    <th>Device ID</th>
+                    <th>Serial No</th>
+                    <th>Device Name</th>
+                    <th>Processor</th>
+                    <th>Remarks</th>
+                    <th>Purchase Date</th>
+                    <th>Status</th>
+                    @if (ViewBag.user)
+            {
+                        <th></th>
+                    }
+                </tr>
+            </thead>
+
+
+            @if (ViewBag.user)
+
+            {
+                <tfoot>
+                    <tr>
+                        <th>Device ID</th>
+                        <th>Serial No</th>
+                        <th>Device Name</th>
+                        <th>Processor</th>
+                        <th>Remarks</th>
+                        <th>Purchase Date</th>
+                        <th>Status</th>
+                        <td></td>
+                    </tr>
+                </tfoot>
+
+            }
+            else
+            {
+
+                <tfoot>
+                    <tr>
+                        <th>Device ID</th>
+                        <th>Serial No</th>
+                        <th>Device Name</th>
+                        <th>Processor</th>
+                        <th>Remarks</th>
+                        <th>Purchase Date</th>
+                        <th>Status</th>
+
+                    </tr>
+                </tfoot>
+
+
+
+
+            }
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+
+                    <tr>
+                        @if (ViewBag.user)
+                        {
+                            <td>@Html.ActionLink(item.Device_ID, "History", new { id = item.S_No })</td>
+                        }
+                        else
+                        {
+                            <td>@item.Device_ID</td>
+                        }
+                        <td>@item.Serial_No</td>
+                        <td>@item.Device_Name</td>
+                        <td>@item.Processor</td>
+                        <td>@item.Remarks</td>
+                        <td>@item.date</td>
+                        <td>@item.Status</td>
+                        @if (ViewBag.user)
+                        {
+                            <td>
+                                @using (Html.BeginForm("Delete", "warehouse", new { id = item.S_No }))
+                                {
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default" id=@item.S_No onclick="myFunction(@item.S_No)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+
+                                        <button type="submit" class="btn btn-default" onclick="return confirm('Do you want to remove the entry?' )"><span class="glyphicon glyphicon-trash"></span> Remove</button>
+                                    </div>  }
+                            </td>
+                        }
+                    </tr>
+
+
+                }
+
+            </tbody>
+        </table>
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/npm.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    @if (ViewBag.user)
+    {
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+        <script src="~/Scripts/table.js"></script>
+
+    }
+
+    else
+
+
+    {
+
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+        <script src="~/Scripts/tableuser.js"></script>
+
+
+    }
+
+    <script type="text/javascript">
+        function myFunction(val) {
+            $.get("@Url.Action("Edit", "warehouse")", { id: val }, function (data) {
+                if (data) {
+                    $('#editdiv').html(data);
+                    $('#myModal2').modal('show');
+
+                }
+            });
+        }
+    </script>
+
+</body>

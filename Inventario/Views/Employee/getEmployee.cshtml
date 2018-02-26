@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Inventario.ServiceContracts.EmployeeViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>getEmployee</title>
+</head>
+<body>
+    <div class="container">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    
+        <table class="table-bordered ">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.S_No)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Emp_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Designation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date_of_joining)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.S_No)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Emp_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Designation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date_of_joining)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.S_No }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.S_No })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
